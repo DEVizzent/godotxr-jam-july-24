@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://be5fwudia6m1f"]
+
+[ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_v8akm"]
+
+[node name="PLAYER" instance=ExtResource("1_v8akm")]

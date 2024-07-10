@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dca7kpaknod76"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sbg5k"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 0.1
+radial_segments = 5
+rings = 1
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ar20j"]
+radius = 0.4
+height = 1.0
+
+[node name="nenufar" type="MeshInstance3D"]
+mesh = SubResource("CylinderMesh_sbg5k")
+
+[node name="flor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.355945, 0)
+mesh = SubResource("CapsuleMesh_ar20j")
+skeleton = NodePath(".")

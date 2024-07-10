@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://cupqee0xr6x0a"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hunv3"]
+radius = 0.25
+height = 0.5
+radial_segments = 20
+rings = 10
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jd7e4"]
+radius = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kkxl"]
+transparency = 1
+albedo_color = Color(0, 0.396078, 1, 0.776471)
+
+[sub_resource type="Curve" id="Curve_5ae1x"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xq0kt"]
+curve = SubResource("Curve_5ae1x")
+
+[sub_resource type="Curve" id="Curve_j2ewd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.115942, 0.978022), 0.0, 0.0, 0, 0, Vector2(0.666667, 0.934066), 0.0, 0.0, 0, 0, Vector2(1, 0.395604), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_kpupj"]
+curve = SubResource("Curve_j2ewd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pxouw"]
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector3(0, 1, 0)
+spread = 30.0
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 0, 0)
+linear_accel_curve = SubResource("CurveTexture_xq0kt")
+scale_min = 0.5
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_kpupj")
+
+[sub_resource type="SphereMesh" id="SphereMesh_bqdch"]
+radius = 0.1
+height = 0.25
+radial_segments = 5
+rings = 6
+
+[node name="canica" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_hunv3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_jd7e4")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_0kkxl")
+emitting = false
+amount = 10
+lifetime = 0.7
+one_shot = true
+explosiveness = 0.52
+process_material = SubResource("ParticleProcessMaterial_pxouw")
+draw_pass_1 = SubResource("SphereMesh_bqdch")
