@@ -1,10 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cupqee0xr6x0a"]
+[gd_scene load_steps=12 format=3 uid="uid://cupqee0xr6x0a"]
+
+[ext_resource type="Script" path="res://scenes/Elements/Canicas/canica.gd" id="1_yqv2n"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_hunv3"]
 radius = 0.25
 height = 0.5
 radial_segments = 20
 rings = 10
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yorrc"]
+albedo_color = Color(0, 0.513726, 0.27451, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jd7e4"]
 radius = 0.25
@@ -49,9 +54,13 @@ radial_segments = 5
 rings = 6
 
 [node name="canica" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_yqv2n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_hunv3")
+surface_material_override/0 = SubResource("StandardMaterial3D_yorrc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_jd7e4")

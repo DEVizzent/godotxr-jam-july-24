@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://do2t8wbyaa1un"]
+[gd_scene load_steps=20 format=3 uid="uid://do2t8wbyaa1un"]
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_fiipc"]
 [ext_resource type="PackedScene" uid="uid://dca7kpaknod76" path="res://scenes/nenufar.tscn" id="2_2vtdm"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="4_5pddb"]
 [ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="5_b4yes"]
 [ext_resource type="Texture2D" uid="uid://nb44kt6el6y8" path="res://AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="6_4nexd"]
+[ext_resource type="PackedScene" uid="uid://bwi8yaqbwifxn" path="res://scenes/Elements/Canicas/pickable_canica.tscn" id="9_0ogyy"]
+[ext_resource type="PackedScene" uid="uid://73cvs0vmshrg" path="res://scenes/Elements/puntuacion.tscn" id="10_svgqe"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_p8st2"]
 top_radius = 0.3
@@ -70,12 +72,15 @@ mesh = SubResource("CylinderMesh_p8st2")
 
 [node name="SnapZone" parent="XROrigin3D/Belt" index="1" instance=ExtResource("5_b4yes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185934, 0, -0.243844)
+initial_object = NodePath("../../../PickableCanica")
 
 [node name="SnapZone2" parent="XROrigin3D/Belt" index="2" instance=ExtResource("5_b4yes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263345, 0, -0.150951)
+initial_object = NodePath("../../../PickableCanica2")
 
 [node name="SnapZone3" parent="XROrigin3D/Belt" index="3" instance=ExtResource("5_b4yes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313662, 0, 0)
+initial_object = NodePath("../../../PickableCanica3")
 
 [node name="fondo" type="Node3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.90838)
@@ -115,3 +120,16 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4.24525, -0.30385, -8.
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
 environment = SubResource("Environment_4qonc")
+
+[node name="PickableCanica" parent="." index="3" instance=ExtResource("9_0ogyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.65, 2.30848)
+
+[node name="PickableCanica2" parent="." index="4" instance=ExtResource("9_0ogyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.65, 2.30848)
+
+[node name="PickableCanica3" parent="." index="5" instance=ExtResource("9_0ogyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.65, 2.30848)
+
+[node name="Puntuacion" parent="." index="6" instance=ExtResource("10_svgqe")]
+transform = Transform3D(0.492044, 0, 0.87057, 0, 1, 0, -0.87057, 0, 0.492044, -2.14598, 2, 1.69186)
+enabled = false
