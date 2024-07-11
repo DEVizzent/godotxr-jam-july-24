@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://do2t8wbyaa1un"]
+[gd_scene load_steps=18 format=3 uid="uid://do2t8wbyaa1un"]
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_fiipc"]
 [ext_resource type="PackedScene" uid="uid://dca7kpaknod76" path="res://scenes/nenufar.tscn" id="2_2vtdm"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="2_o3had"]
+[ext_resource type="Script" path="res://scenes/Niveles/base.gd" id="2_u1d0l"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_2j7sg"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="4_5pddb"]
 [ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="5_b4yes"]
@@ -46,6 +47,9 @@ ambient_light_color = Color(0, 0.531074, 0.955546, 1)
 reflected_light_source = 1
 
 [node name="SceneBase" instance=ExtResource("1_fiipc")]
+script = ExtResource("2_u1d0l")
+puntuacion_minima_victoria = 50
+nextLevel = "res://scenes/Niveles/tuto.tscn"
 
 [node name="XROrigin3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 3)

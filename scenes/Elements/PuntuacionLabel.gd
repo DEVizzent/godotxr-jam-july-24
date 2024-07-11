@@ -10,6 +10,7 @@ func _ready() -> void:
 func actualizaPuntuacion(valorCanica:int)->void:
 	puntuacion += valorCanica
 	text = str(puntuacion)
+	EventBus.emit_signal(EventBus.PUNTUACION_ACTUALIZADA, puntuacion)
 
 
 
