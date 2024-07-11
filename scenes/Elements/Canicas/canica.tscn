@@ -19,14 +19,14 @@ max_value = 200.0
 _data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_xq0kt"]
+[sub_resource type="CurveTexture" id="CurveTexture_4tv2h"]
 curve = SubResource("Curve_5ae1x")
 
 [sub_resource type="Curve" id="Curve_j2ewd"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.115942, 0.978022), 0.0, 0.0, 0, 0, Vector2(0.666667, 0.934066), 0.0, 0.0, 0, 0, Vector2(1, 0.395604), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_kpupj"]
+[sub_resource type="CurveTexture" id="CurveTexture_kh0uo"]
 curve = SubResource("Curve_j2ewd")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pxouw"]
@@ -37,10 +37,10 @@ spread = 30.0
 initial_velocity_min = 1.0
 initial_velocity_max = 3.0
 gravity = Vector3(0, 0, 0)
-linear_accel_curve = SubResource("CurveTexture_xq0kt")
+linear_accel_curve = SubResource("CurveTexture_4tv2h")
 scale_min = 0.5
 scale_max = 2.0
-scale_curve = SubResource("CurveTexture_kpupj")
+scale_curve = SubResource("CurveTexture_kh0uo")
 
 [sub_resource type="SphereMesh" id="SphereMesh_bqdch"]
 radius = 0.1

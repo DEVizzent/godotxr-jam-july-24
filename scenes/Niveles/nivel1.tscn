@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dg6i6sspao152"]
 
 [ext_resource type="PackedScene" uid="uid://be5fwudia6m1f" path="res://scenes/player.tscn" id="1_ki5bx"]
-[ext_resource type="PackedScene" uid="uid://cupqee0xr6x0a" path="res://scenes/canica.tscn" id="2_0msvy"]
+[ext_resource type="PackedScene" uid="uid://cupqee0xr6x0a" path="res://scenes/Elements/Canicas/canica.tscn" id="2_0msvy"]
 [ext_resource type="PackedScene" uid="uid://dca7kpaknod76" path="res://scenes/nenufar.tscn" id="3_j1b8o"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ob8e7"]

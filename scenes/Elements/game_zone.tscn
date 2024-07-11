@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://r34msbwjx7mk"]
+
+[ext_resource type="Script" path="res://scenes/Elements/game_zone.gd" id="1_anupi"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3rsxm"]
+height = 0.5
+radius = 2.0
+
+[node name="GameZone" type="Area3D"]
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_anupi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_3rsxm")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

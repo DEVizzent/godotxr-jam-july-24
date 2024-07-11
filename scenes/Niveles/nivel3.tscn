@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dca7kpaknod76" path="res://scenes/nenufar.tscn" id="1_kofda"]
 [ext_resource type="PackedScene" uid="uid://be5fwudia6m1f" path="res://scenes/player.tscn" id="2_g0f1r"]
-[ext_resource type="PackedScene" uid="uid://cupqee0xr6x0a" path="res://scenes/canica.tscn" id="3_ab43s"]
+[ext_resource type="PackedScene" uid="uid://cupqee0xr6x0a" path="res://scenes/Elements/Canicas/canica.tscn" id="3_ab43s"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ob8e7"]
 top_radius = 2.5

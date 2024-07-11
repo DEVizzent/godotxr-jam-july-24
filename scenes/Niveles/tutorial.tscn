@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bp0q5ifmqbm4m"]
 
 [ext_resource type="PackedScene" uid="uid://be5fwudia6m1f" path="res://scenes/player.tscn" id="1_l67kq"]
-[ext_resource type="PackedScene" uid="uid://cupqee0xr6x0a" path="res://scenes/canica.tscn" id="2_mqjc7"]
+[ext_resource type="PackedScene" uid="uid://cupqee0xr6x0a" path="res://scenes/Elements/Canicas/canica.tscn" id="2_mqjc7"]
 [ext_resource type="PackedScene" uid="uid://dca7kpaknod76" path="res://scenes/nenufar.tscn" id="3_bc8q8"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ob8e7"]
@@ -76,6 +76,35 @@ shape = SubResource("ConcavePolygonShape3D_wgyyy")
 mesh = SubResource("CylinderMesh_671if")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma/tablero"]
+shape = SubResource("ConcavePolygonShape3D_fryrv")
+
+[node name="Plataforma" type="Node3D" parent="Plataforma"]
+
+[node name="comienzo" type="StaticBody3D" parent="Plataforma/Plataforma"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.03976)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plataforma/Plataforma/comienzo"]
+mesh = SubResource("CylinderMesh_ob8e7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma/Plataforma/comienzo"]
+shape = SubResource("ConcavePolygonShape3D_ios83")
+
+[node name="camino" type="StaticBody3D" parent="Plataforma/Plataforma"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plataforma/Plataforma/camino"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.62648)
+mesh = SubResource("BoxMesh_mmi8l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma/Plataforma/camino"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.62648)
+shape = SubResource("ConcavePolygonShape3D_wgyyy")
+
+[node name="tablero" type="StaticBody3D" parent="Plataforma/Plataforma"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plataforma/Plataforma/tablero"]
+mesh = SubResource("CylinderMesh_671if")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma/Plataforma/tablero"]
 shape = SubResource("ConcavePolygonShape3D_fryrv")
 
 [node name="fondo" type="Node3D" parent="."]
