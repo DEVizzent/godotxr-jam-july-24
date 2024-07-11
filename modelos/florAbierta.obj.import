@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dytt3sqy0fdjl"
+path="res://.godot/imported/florAbierta.obj-fc05374196f45ff64b236f3b556c0e4e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/florAbierta.obj-fc05374196f45ff64b236f3b556c0e4e.mesh"]
+
+source_file="res://modelos/florAbierta.obj"
+dest_files=["res://.godot/imported/florAbierta.obj-fc05374196f45ff64b236f3b556c0e4e.mesh", "res://.godot/imported/florAbierta.obj-fc05374196f45ff64b236f3b556c0e4e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

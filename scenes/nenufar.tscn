@@ -1,20 +1,67 @@
-[gd_scene load_steps=3 format=3 uid="uid://dca7kpaknod76"]
+[gd_scene load_steps=10 format=3 uid="uid://dca7kpaknod76"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_sbg5k"]
-top_radius = 1.0
-bottom_radius = 1.0
-height = 0.1
+[ext_resource type="ArrayMesh" uid="uid://jd7b5ccvaeba" path="res://modelos/florCerrada.obj" id="1_ef2fu"]
+[ext_resource type="ArrayMesh" uid="uid://dytt3sqy0fdjl" path="res://modelos/florAbierta.obj" id="2_vbcl4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbtp3"]
+albedo_color = Color(1, 0.411765, 0.556863, 1)
+emission_enabled = true
+emission = Color(1, 0.623529, 0.658824, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="Curve" id="Curve_bhhmk"]
+min_value = -5.0
+max_value = 5.0
+_data = [Vector2(0.0217391, -0.054945), 0.0, 0.0, 0, 0, Vector2(0.326087, 4.67033), 0.0, 0.0, 0, 0, Vector2(1, -4.78022), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_e7mcw"]
+curve = SubResource("Curve_bhhmk")
+
+[sub_resource type="Curve" id="Curve_d046l"]
+max_value = 3.0
+_data = [Vector2(0, 0.0329671), 0.0, 0.0, 0, 0, Vector2(0.362319, 3), 0.0, 0.0, 0, 0, Vector2(0.847826, 2.27473), 0.0, 0.0, 0, 0, Vector2(1, 0.131868), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_bqs25"]
+curve = SubResource("Curve_d046l")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h4x3e"]
+angle_max = 45.0
+direction = Vector3(0, 0.5, 0)
+spread = 90.0
+initial_velocity_min = 0.1
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+linear_accel_max = 3.0
+linear_accel_curve = SubResource("CurveTexture_e7mcw")
+scale_curve = SubResource("CurveTexture_bqs25")
+color = Color(1, 0.384314, 1, 1)
+turbulence_noise_scale = 4.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_40jc8"]
+radius = 0.3
+height = 0.6
 radial_segments = 5
-rings = 1
+rings = 3
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ar20j"]
-radius = 0.4
-height = 1.0
+[node name="nenufar" type="Node3D"]
 
-[node name="nenufar" type="MeshInstance3D"]
-mesh = SubResource("CylinderMesh_sbg5k")
+[node name="cerrado" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_ef2fu")
 
-[node name="flor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.355945, 0)
-mesh = SubResource("CapsuleMesh_ar20j")
+[node name="enflor" type="MeshInstance3D" parent="."]
+visible = false
+mesh = ExtResource("2_vbcl4")
 skeleton = NodePath(".")
+
+[node name="CPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69687, -0.099659)
+material_override = SubResource("StandardMaterial3D_rbtp3")
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 0.63
+visibility_aabb = AABB(-4, -3.31748, -4, 8, 6.63496, 8)
+process_material = SubResource("ParticleProcessMaterial_h4x3e")
+draw_pass_1 = SubResource("SphereMesh_40jc8")
