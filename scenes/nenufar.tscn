@@ -45,7 +45,7 @@ height = 0.6
 radial_segments = 5
 rings = 3
 
-[node name="nenufar" type="Node3D"]
+[node name="nenufar" type="Node3D" groups=["nenufar"]]
 
 [node name="cerrado" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_ef2fu")
@@ -55,7 +55,7 @@ visible = false
 mesh = ExtResource("2_vbcl4")
 skeleton = NodePath(".")
 
-[node name="CPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="particles" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69687, -0.099659)
 material_override = SubResource("StandardMaterial3D_rbtp3")
 emitting = false

@@ -25,6 +25,10 @@ EventBus="*res://scrips/event_bus.gd"
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [layer_names]
 
 3d_physics/layer_1="Static World"
