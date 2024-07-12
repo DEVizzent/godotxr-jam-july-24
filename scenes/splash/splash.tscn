@@ -1,12 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2k1slsbgp3a7"]
+[gd_scene load_steps=6 format=3 uid="uid://d2k1slsbgp3a7"]
 
 [ext_resource type="PackedScene" uid="uid://bnqnnnet4dw12" path="res://addons/godot-xr-tools/staging/staging.tscn" id="1_qngs6"]
-[ext_resource type="Texture2D" uid="uid://cuafx02iuwy38" path="res://icon.svg" id="2_facx7"]
+[ext_resource type="Texture2D" uid="uid://snf2qyrywtc4" path="res://portada.png" id="2_moy37"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1fc5q"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_t2kds"]
+sky_material = SubResource("ProceduralSkyMaterial_1fc5q")
+
+[sub_resource type="Environment" id="Environment_323l3"]
+background_mode = 1
+background_color = Color(0.645071, 0.895346, 1, 1)
+sky = SubResource("Sky_t2kds")
+ambient_light_source = 2
+ambient_light_color = Color(0.857756, 0.670907, 0.503778, 1)
+tonemap_mode = 2
 
 [node name="Staging" instance=ExtResource("1_qngs6")]
 main_scene = "res://scenes/Niveles/tuto.tscn"
 
 [node name="LoadingScreen" parent="." index="2"]
-splash_screen = ExtResource("2_facx7")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.19002, 0)
+splash_screen = ExtResource("2_moy37")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="LoadingScreen" index="3"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="5"]
+environment = SubResource("Environment_323l3")

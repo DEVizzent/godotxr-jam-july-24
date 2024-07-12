@@ -29,13 +29,13 @@ data = PackedVector3Array(0, 1, 30, 17.6336, 1, 24.2705, 0, 0.6, 28, 17.6336, 1,
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_t2kds"]
+[sub_resource type="Sky" id="Sky_0bpd6"]
 sky_material = SubResource("ProceduralSkyMaterial_dtga2")
 
 [sub_resource type="Environment" id="Environment_bx5qi"]
 background_mode = 1
 background_color = Color(0.645071, 0.895346, 1, 1)
-sky = SubResource("Sky_t2kds")
+sky = SubResource("Sky_0bpd6")
 ambient_light_source = 2
 ambient_light_color = Color(0.857756, 0.670907, 0.503778, 1)
 tonemap_mode = 2
