@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dm36m1h8ub1gs"]
+[gd_scene load_steps=16 format=3 uid="uid://ckaeebxcubu2d"]
 
 [ext_resource type="PackedScene" uid="uid://do2t8wbyaa1un" path="res://scenes/Niveles/base.tscn" id="1_5o4tl"]
 [ext_resource type="PackedScene" uid="uid://dca7kpaknod76" path="res://scenes/nenufar.tscn" id="2_rh8jk"]
@@ -42,7 +42,6 @@ height = 0.5
 radius = 1.0
 
 [node name="SceneBase" instance=ExtResource("1_5o4tl")]
-nextLevel = "res://scenes/Niveles/nivel_1.tscn"
 
 [node name="XROrigin3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 4.72305)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://byr2mxj7ywjuu"]
+[gd_scene load_steps=13 format=3 uid="uid://bobtojlsluctn"]
 
 [ext_resource type="PackedScene" uid="uid://do2t8wbyaa1un" path="res://scenes/Niveles/base.tscn" id="1_cmam1"]
 [ext_resource type="PackedScene" uid="uid://dca7kpaknod76" path="res://scenes/nenufar.tscn" id="2_y8cpl"]
@@ -33,7 +33,7 @@ height = 0.5
 radius = 2.5
 
 [node name="SceneBase" instance=ExtResource("1_cmam1")]
-nextLevel = "res://scenes/Niveles/nivel_1.tscn"
+nextLevel = "res://scenes/Niveles/nivel_3.tscn"
 
 [node name="XROrigin3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 4.72305)
@@ -109,10 +109,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.752386, 0)
 shape = SubResource("CylinderShape3D_s5dt8")
 
 [node name="comienzo" parent="Plataforma" index="4" instance=ExtResource("4_rqvwu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.17777)
+transform = Transform3D(0.966859, 0, -0.255311, 0, 1, 0, 0.255311, 0, 0.966859, 0, 0, 8.17777)
 
 [node name="Puntuacion" parent="." index="3"]
-transform = Transform3D(0.492044, 0, 0.87057, 0, 1, 0, -0.87057, 0, 0.492044, -2.48481, 2, 1.69186)
+transform = Transform3D(-0.0417705, 0, 0.999127, 0, 1, 0, -0.999127, 0, -0.0417705, -2.48481, 2, 4.27629)
 
 [node name="canica3" parent="." index="5" instance=ExtResource("5_mk3ee")]
 transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, -5.66854, 0.809845, -4.03677)
