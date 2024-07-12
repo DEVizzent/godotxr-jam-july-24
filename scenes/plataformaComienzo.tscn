@@ -66,3 +66,7 @@ text = "Take a ball
 ⇩"
 font_size = 100
 script = ExtResource("3_hvdg4")
+
+[connection signal="picked_up" from="cajon/PickableCanica" to="cartel/Cartel/Label3D" method="_on_pickable_canica_picked_up"]
+[connection signal="picked_up" from="cajon/PickableCanica2" to="cartel/Cartel/Label3D" method="_on_pickable_canica_picked_up"]
+[connection signal="picked_up" from="cajon/PickableCanica3" to="cartel/Cartel/Label3D" method="_on_pickable_canica_picked_up"]

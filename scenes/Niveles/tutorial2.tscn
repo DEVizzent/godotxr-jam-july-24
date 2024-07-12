@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://ba2ojctnvh1sn"]
+[gd_scene load_steps=17 format=3 uid="uid://lxwnory8ici2"]
 
 [ext_resource type="PackedScene" uid="uid://bmfs34hxnxftt" path="res://scenes/plataformaComienzo.tscn" id="1_qvg1e"]
 [ext_resource type="PackedScene" uid="uid://dca7kpaknod76" path="res://scenes/nenufar.tscn" id="2_4hify"]
 [ext_resource type="PackedScene" uid="uid://be5fwudia6m1f" path="res://scenes/player.tscn" id="3_p5gqq"]
-[ext_resource type="PackedScene" uid="uid://cupqee0xr6x0a" path="res://scenes/canica.tscn" id="4_o3m45"]
+[ext_resource type="PackedScene" uid="uid://cupqee0xr6x0a" path="res://scenes/Elements/Canicas/canica.tscn" id="4_o3m45"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xa1mx"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
