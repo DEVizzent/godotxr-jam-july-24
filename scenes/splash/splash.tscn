@@ -32,5 +32,4 @@ environment = SubResource("Environment_323l3")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="6"]
 stream = ExtResource("3_pfi74")
 autoplay = true
-stream_paused = true
 bus = &"Music"
