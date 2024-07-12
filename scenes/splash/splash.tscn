@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2k1slsbgp3a7"]
+[gd_scene load_steps=7 format=3 uid="uid://d2k1slsbgp3a7"]
 
 [ext_resource type="PackedScene" uid="uid://bnqnnnet4dw12" path="res://addons/godot-xr-tools/staging/staging.tscn" id="1_qngs6"]
 [ext_resource type="Texture2D" uid="uid://snf2qyrywtc4" path="res://portada.png" id="2_moy37"]
+[ext_resource type="AudioStream" uid="uid://cedwf0471fqc8" path="res://scenes/splash/music.mp3" id="3_pfi74"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1fc5q"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -27,3 +28,9 @@ splash_screen = ExtResource("2_moy37")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="5"]
 environment = SubResource("Environment_323l3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource("3_pfi74")
+autoplay = true
+stream_paused = true
+bus = &"Music"
