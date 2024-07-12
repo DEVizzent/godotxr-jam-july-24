@@ -138,12 +138,12 @@ tamanoradio = 0.15
 
 [node name="canica5" parent="." index="10" instance=ExtResource("5_mk3ee")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4832, 1.06052, -6.27774)
-puntuacion = 10
+puntuacion = 15
 tamanoradio = 0.5
 
 [node name="canica6" parent="." index="11" instance=ExtResource("5_mk3ee")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.54622, 1.06052, -5.00513)
-puntuacion = 10
+puntuacion = 15
 tamanoradio = 0.5
 
 [editable path="Plataforma/comienzo"]

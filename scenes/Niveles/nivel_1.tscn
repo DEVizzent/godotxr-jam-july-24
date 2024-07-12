@@ -27,6 +27,7 @@ height = 0.5
 radius = 2.5
 
 [node name="SceneBase" instance=ExtResource("1_u8e5n")]
+puntuacion_minima_victoria = 70
 nextLevel = "res://scenes/Niveles/nivel_2.tscn"
 
 [node name="XROrigin3D" parent="." index="0"]
