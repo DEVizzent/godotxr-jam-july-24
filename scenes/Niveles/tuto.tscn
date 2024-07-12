@@ -31,9 +31,6 @@ nextLevel = "res://scenes/Niveles/nivel_1.tscn"
 [node name="XROrigin3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 4.72305)
 
-[node name="MeshInstance3D" parent="XROrigin3D/Belt" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.242317)
-
 [node name="nenufar" parent="fondo/Nenufares" index="0"]
 transform = Transform3D(0.195486, 0, -0.460201, 0, 0.5, 0, 0.460201, 0, 0.195486, 6.36326, -0.321768, 1.63002)
 
@@ -73,28 +70,9 @@ shape = SubResource("CylinderShape3D_s5dt8")
 [node name="comienzo" parent="Plataforma" index="2" instance=ExtResource("3_h0ltl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.17777)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="3"]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-light_color = Color(1, 0.917647, 0.839216, 1)
-light_energy = 2.0
-shadow_enabled = true
-
-[node name="PickableCanica" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.968, 0.898287, 3.59523)
-
-[node name="PickableCanica2" parent="." index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.09802, 0.886824, 4.01972)
-
-[node name="PickableCanica3" parent="." index="7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83122, 0.892807, 3.17848)
-
-[node name="Puntuacion" parent="." index="8"]
-visible = false
-
-[node name="canica" parent="." index="9" instance=ExtResource("4_qw1ik")]
+[node name="canica" parent="." index="5" instance=ExtResource("4_qw1ik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774856, -2.08083)
+puntuacion = 100
 tamanoradio = 0.5
-
-[connection signal="grabbed" from="PickableCanica" to="Plataforma/comienzo/cartel/Cartel/Label3D" method="_on_pickable_canica_grabbed"]
 
 [editable path="Plataforma/comienzo"]

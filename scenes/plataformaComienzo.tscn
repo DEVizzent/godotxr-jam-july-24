@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmfs34hxnxftt"]
+[gd_scene load_steps=9 format=3 uid="uid://bmfs34hxnxftt"]
 
 [ext_resource type="ArrayMesh" uid="uid://ilhkx26tygi8" path="res://modelos/cajon.obj" id="1_y1w71"]
 [ext_resource type="ArrayMesh" uid="uid://dj2r71u1bukj0" path="res://modelos/cartel.obj" id="2_jtgnv"]
 [ext_resource type="Script" path="res://scenes/textocartel.gd" id="3_hvdg4"]
+[ext_resource type="PackedScene" uid="uid://bwi8yaqbwifxn" path="res://scenes/Elements/Canicas/pickable_canica.tscn" id="4_bo3mm"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ob8e7"]
-top_radius = 2.0
-bottom_radius = 2.5
+top_radius = 2.5
+bottom_radius = 2.7
 height = 1.0
 radial_segments = 15
 rings = 1
@@ -29,7 +30,7 @@ mesh = SubResource("CylinderMesh_ob8e7")
 shape = SubResource("ConcavePolygonShape3D_luyps")
 
 [node name="cajon" type="StaticBody3D" parent="."]
-transform = Transform3D(0.518591, 0, -0.301767, 0, 0.6, 0, 0.301767, 0, 0.518591, 0.501591, 0.222996, -0.268545)
+transform = Transform3D(0.4285, 0, -0.419985, 0, 0.6, 0, 0.419985, 0, 0.4285, -0.722004, 0.222996, 0.0289307)
 
 [node name="CajonMesh" type="MeshInstance3D" parent="cajon"]
 transform = Transform3D(0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553, 1.95311, 0.933815, -1.46487)
@@ -41,8 +42,17 @@ skeleton = NodePath("../..")
 transform = Transform3D(0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553, 1.95311, 0.933815, -1.46487)
 shape = SubResource("ConcavePolygonShape3D_7obpu")
 
+[node name="PickableCanica" parent="cajon" instance=ExtResource("4_bo3mm")]
+transform = Transform3D(1.44053, 0, 0.838242, 0, 1.66667, 0, -0.838242, 0, 1.44053, 1.43435, 1.06708, -2.02091)
+
+[node name="PickableCanica2" parent="cajon" instance=ExtResource("4_bo3mm")]
+transform = Transform3D(1.44053, 0, 0.838242, 0, 1.66667, 0, -0.838242, 0, 1.44053, 1.92452, 1.06522, -1.52204)
+
+[node name="PickableCanica3" parent="cajon" instance=ExtResource("4_bo3mm")]
+transform = Transform3D(1.44053, 0, 0.838242, 0, 1.66667, 0, -0.838242, 0, 1.44053, 2.38315, 1.06254, -1.05093)
+
 [node name="cartel" type="StaticBody3D" parent="."]
-transform = Transform3D(0.864319, 0, -0.502945, 0, 1, 0, 0.502945, 0, 0.864319, 1.91453, 0.490871, -0.528477)
+transform = Transform3D(0.714168, 0, -0.699975, 0, 1, 0, 0.699975, 0, 0.714168, 0.711476, -0.063214, 0.124296)
 
 [node name="Cartel" type="MeshInstance3D" parent="cartel"]
 transform = Transform3D(0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553, 0.628172, 0, -0.590219)
