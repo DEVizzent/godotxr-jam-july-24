@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmfs34hxnxftt"]
+[gd_scene load_steps=14 format=3 uid="uid://bmfs34hxnxftt"]
 
+[ext_resource type="Script" path="res://scenes/Elements/cajon.gd" id="1_bs6ed"]
 [ext_resource type="ArrayMesh" uid="uid://ilhkx26tygi8" path="res://modelos/cajon.obj" id="1_y1w71"]
 [ext_resource type="ArrayMesh" uid="uid://dj2r71u1bukj0" path="res://modelos/cartel.obj" id="2_jtgnv"]
 [ext_resource type="Script" path="res://scenes/textocartel.gd" id="3_hvdg4"]
+[ext_resource type="PackedScene" uid="uid://cme66uldrjl2i" path="res://addons/godot-xr-tools/interactables/interactable_area_button.tscn" id="3_xjcek"]
 [ext_resource type="PackedScene" uid="uid://bwi8yaqbwifxn" path="res://scenes/Elements/Canicas/pickable_canica.tscn" id="4_bo3mm"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ob8e7"]
@@ -21,6 +23,19 @@ albedo_color = Color(0.980392, 0.443137, 0, 1)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7obpu"]
 data = PackedVector3Array(-2.4279, 1, -1, 2.4279, 1, -1, -2.4279, 1, -1, -2.4279, 1, -1, 2.4279, 1, -1, 2.4279, 1, -1, 2.4279, 0.3936, 1, 2.4279, -1, 1, -2.4279, 0.3936, 1, -2.4279, 0.3936, 1, 2.4279, -1, 1, -2.4279, -1, 1, -2.4279, 0.3936, 1, -2.4279, -1, 1, -2.4279, 1, -1, -2.4279, 1, -1, -2.4279, -1, 1, -2.4279, -1, -1, 2.4279, -1, -1, -2.4279, -1, -1, 2.4279, -1, 1, 2.4279, -1, 1, -2.4279, -1, -1, -2.4279, -1, 1, 2.4279, 1, -1, 2.4279, -1, -1, 2.4279, 0.3936, 1, 2.4279, 0.3936, 1, 2.4279, -1, -1, 2.4279, -1, 1, -2.4279, 1, -1, -2.4279, -1, -1, 2.4279, 1, -1, 2.4279, 1, -1, -2.4279, -1, -1, 2.4279, -1, -1, -2.243, 0.4378, 0.854, -2.243, 0.9557, -0.854, -2.243, -0.5084, 0.854, -2.243, -0.5084, 0.854, -2.243, 0.9557, -0.854, -2.243, 0.0095, -0.854, 2.4279, 0.3936, 1, -2.4279, 0.3936, 1, 2.4279, 0.3936, 1, 2.4279, 0.3936, 1, -2.4279, 0.3936, 1, -2.4279, 0.3936, 1, -2.4279, 0.3936, 1, -2.4279, 1, -1, -2.4279, 0.3936, 1, -2.4279, 0.3936, 1, -2.4279, 1, -1, -2.4279, 1, -1, 2.4279, 1, -1, 2.4279, 0.3936, 1, 2.4279, 1, -1, 2.4279, 1, -1, 2.4279, 0.3936, 1, 2.4279, 0.3936, 1, -2.243, 0.4378, 0.854, 2.243, 0.4378, 0.854, -2.4279, 0.3936, 1, -2.4279, 0.3936, 1, 2.243, 0.4378, 0.854, 2.4279, 0.3936, 1, 2.243, 0.4378, 0.854, 2.243, 0.9557, -0.854, 2.4279, 0.3936, 1, 2.4279, 0.3936, 1, 2.243, 0.9557, -0.854, 2.4279, 1, -1, -2.243, 0.9557, -0.854, -2.243, 0.4378, 0.854, -2.4279, 1, -1, -2.4279, 1, -1, -2.243, 0.4378, 0.854, -2.4279, 0.3936, 1, 2.243, 0.9557, -0.854, -2.243, 0.9557, -0.854, 2.4279, 1, -1, 2.4279, 1, -1, -2.243, 0.9557, -0.854, -2.4279, 1, -1, -2.243, 0.0095, -0.854, 2.243, 0.0095, -0.854, -2.243, -0.5084, 0.854, -2.243, -0.5084, 0.854, 2.243, 0.0095, -0.854, 2.243, -0.5084, 0.854, 2.243, 0.4378, 0.854, -2.243, 0.4378, 0.854, 2.243, -0.5084, 0.854, 2.243, -0.5084, 0.854, -2.243, 0.4378, 0.854, -2.243, -0.5084, 0.854, -2.243, 0.9557, -0.854, 2.243, 0.9557, -0.854, -2.243, 0.0095, -0.854, -2.243, 0.0095, -0.854, 2.243, 0.9557, -0.854, 2.243, 0.0095, -0.854, 2.243, 0.9557, -0.854, 2.243, 0.4378, 0.854, 2.243, 0.0095, -0.854, 2.243, 0.0095, -0.854, 2.243, 0.4378, 0.854, 2.243, -0.5084, 0.854)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rnmyl"]
+height = 0.04
+radius = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f45xk"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_r381w"]
+material = SubResource("StandardMaterial3D_f45xk")
+top_radius = 0.04
+bottom_radius = 0.05
+height = 0.03
+
 [node name="comienzo" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -31,6 +46,7 @@ shape = SubResource("ConcavePolygonShape3D_luyps")
 
 [node name="cajon" type="StaticBody3D" parent="."]
 transform = Transform3D(0.4285, 0, -0.419985, 0, 0.6, 0, 0.419985, 0, 0.4285, -0.722004, 0.222996, 0.0289307)
+script = ExtResource("1_bs6ed")
 
 [node name="CajonMesh" type="MeshInstance3D" parent="cajon"]
 transform = Transform3D(0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553, 1.95311, 0.933815, -1.46487)
@@ -51,8 +67,21 @@ transform = Transform3D(1.44053, 0, 0.838242, 0, 1.66667, 0, -0.838242, 0, 1.440
 [node name="PickableCanica3" parent="cajon" instance=ExtResource("4_bo3mm")]
 transform = Transform3D(1.44053, 0, 0.838242, 0, 1.66667, 0, -0.838242, 0, 1.44053, 2.38315, 1.06254, -1.05093)
 
+[node name="BotonReinicio" type="Node3D" parent="cajon"]
+transform = Transform3D(0.484267, -0.72176, 0.494517, 0.714473, -3.12306e-08, -0.699663, 0.504989, 0.692143, 0.515678, 2.33866, 2.02561, -2.03196)
+visible = false
+
+[node name="InteractableAreaButton" parent="cajon/BotonReinicio" instance=ExtResource("3_xjcek")]
+button = NodePath("../ButtonMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cajon/BotonReinicio/InteractableAreaButton"]
+shape = SubResource("CylinderShape3D_rnmyl")
+
+[node name="ButtonMesh" type="MeshInstance3D" parent="cajon/BotonReinicio"]
+mesh = SubResource("CylinderMesh_r381w")
+
 [node name="cartel" type="StaticBody3D" parent="."]
-transform = Transform3D(0.714168, 0, -0.699975, 0, 1, 0, 0.699975, 0, 0.714168, 0.711476, -0.063214, 0.124296)
+transform = Transform3D(0.714168, 0, -0.699975, 0, 1, 0, 0.699975, 0, 0.714168, 0.337776, 0.219477, 0.124296)
 
 [node name="Cartel" type="MeshInstance3D" parent="cartel"]
 transform = Transform3D(0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553, 0.628172, 0, -0.590219)
@@ -70,3 +99,5 @@ script = ExtResource("3_hvdg4")
 [connection signal="picked_up" from="cajon/PickableCanica" to="cartel/Cartel/Label3D" method="_on_pickable_canica_picked_up"]
 [connection signal="picked_up" from="cajon/PickableCanica2" to="cartel/Cartel/Label3D" method="_on_pickable_canica_picked_up"]
 [connection signal="picked_up" from="cajon/PickableCanica3" to="cartel/Cartel/Label3D" method="_on_pickable_canica_picked_up"]
+[connection signal="button_released" from="cajon/BotonReinicio/InteractableAreaButton" to="cajon" method="_on_reset_button_released"]
+[connection signal="reset_message_showed" from="cartel/Cartel/Label3D" to="cajon" method="_on_reset_message_showed"]
