@@ -77,10 +77,7 @@ shape = SubResource("CylinderShape3D_s5dt8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.17777)
 
 [node name="BotonReinicio" parent="Plataforma/comienzo/cajon" index="5"]
-transform = Transform3D(1, 0, 7.15256e-07, 0, 1, 0, -5.96046e-08, 0, 1, 2.87162, 1.40927, -1.02261)
-
-[node name="sueloboton" parent="Plataforma/comienzo/cajon" index="6"]
-transform = Transform3D(0.843166, 0, 0.537653, 0, 1, 0, -0.537653, 0, 0.843166, 2.87582, 1.39089, -1.02628)
+transform = Transform3D(1, 0, 5.96047e-08, 0, 1, 0, -5.96047e-08, 0, 1, 2.85256, 1.40927, -0.982989)
 
 [node name="CollisionShapeCartel" parent="Plataforma/comienzo/cartelinstrucciones" index="1"]
 shape = SubResource("BoxShape3D_4jfpq")

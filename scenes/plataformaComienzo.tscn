@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bmfs34hxnxftt"]
+[gd_scene load_steps=28 format=3 uid="uid://bmfs34hxnxftt"]
 
 [ext_resource type="Script" path="res://scenes/Elements/cajon.gd" id="1_bs6ed"]
 [ext_resource type="ArrayMesh" uid="uid://ilhkx26tygi8" path="res://modelos/cajon.obj" id="1_y1w71"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bwi8yaqbwifxn" path="res://scenes/Elements/Canicas/pickable_canica.tscn" id="4_bo3mm"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/interactables/interactable_area_button.gd" id="7_1fwct"]
 [ext_resource type="ArrayMesh" uid="uid://ww3brrileq67" path="res://modelos/cartelmadera.obj" id="7_8av1i"]
+[ext_resource type="Script" path="res://scenes/Elements/NextLevelButton.gd" id="7_sidad"]
 [ext_resource type="Script" path="res://scenes/Elements/exit_game.gd" id="8_gmgeh"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ob8e7"]
@@ -31,6 +32,12 @@ data = PackedVector3Array(-2.4279, 1, -1, 2.4279, 1, -1, -2.4279, 1, -1, -2.4279
 height = 0.05
 radius = 0.06
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_s1e52"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.06
+radial_segments = 5
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f45xk"]
 albedo_color = Color(1, 0, 0, 1)
 
@@ -40,18 +47,21 @@ top_radius = 0.05
 bottom_radius = 0.06
 height = 0.05
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_s1e52"]
-top_radius = 0.2
-bottom_radius = 0.2
-height = 0.06
-radial_segments = 5
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_0kx0y"]
 size = Vector3(0.145874, 0.602997, 1.06952)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fiude"]
 height = 1.0
 radius = 0.04
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7tovq"]
+albedo_color = Color(0, 0.392157, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vwv3i"]
+material = SubResource("StandardMaterial3D_7tovq")
+top_radius = 0.05
+bottom_radius = 0.06
+height = 0.05
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spw3b"]
 albedo_color = Color(0.717666, 0.44403, 0.364093, 1)
@@ -113,14 +123,15 @@ button = NodePath("../ButtonMesh")
 transform = Transform3D(1, 2.22045e-16, 0, 1.77636e-15, 1, 4.44089e-16, 0, 1.11022e-15, 1, 0, 0.0373372, 0)
 shape = SubResource("CylinderShape3D_rnmyl")
 
+[node name="sueloboton" type="MeshInstance3D" parent="cajon/BotonReinicio"]
+transform = Transform3D(0.843166, -8.15394e-16, 0.537653, 0, 1, 1.4803e-15, -0.537653, 1.23548e-15, 0.843166, 0.0041995, -0.0183799, -0.00366992)
+material_override = SubResource("StandardMaterial3D_qp1ml")
+mesh = SubResource("CylinderMesh_s1e52")
+skeleton = NodePath("../..")
+
 [node name="ButtonMesh" type="MeshInstance3D" parent="cajon/BotonReinicio"]
 transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.0339808, 0)
 mesh = SubResource("CylinderMesh_r381w")
-
-[node name="sueloboton" type="MeshInstance3D" parent="cajon"]
-transform = Transform3D(0.843166, 0, 0.537653, 0, 1, 0, -0.537653, 0, 0.843166, 2.85676, 1.39089, -0.986658)
-material_override = SubResource("StandardMaterial3D_qp1ml")
-mesh = SubResource("CylinderMesh_s1e52")
 
 [node name="cartel" type="StaticBody3D" parent="."]
 transform = Transform3D(0.508997, 0, -0.860769, 0, 1, 0, 0.860769, 0, 0.508997, 0.424377, 0.219477, 0.383485)
@@ -146,6 +157,31 @@ shape = SubResource("BoxShape3D_0kx0y")
 [node name="CollisionShapePalo" type="CollisionShape3D" parent="cartel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.938621, 0.441857, -0.0523192)
 shape = SubResource("CylinderShape3D_fiude")
+
+[node name="NextLevelButton" type="Node3D" parent="cartel"]
+transform = Transform3D(0.963163, 0, 0.26892, 0, 1, 0, -0.26892, 0, 0.963163, 1.00319, 0.808163, 0.327969)
+visible = false
+script = ExtResource("7_sidad")
+
+[node name="InteractableAreaButton" parent="cartel/NextLevelButton" instance=ExtResource("3_xjcek")]
+transform = Transform3D(1, -1.49012e-08, 5.96046e-08, 0, 1, 1.49012e-08, 0, 1.49012e-08, 1, 0, 0, 0)
+monitoring = false
+monitorable = false
+button = NodePath("../ButtonMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cartel/NextLevelButton/InteractableAreaButton"]
+transform = Transform3D(1, 2.22045e-16, 0, 1.77636e-15, 1, 4.44089e-16, 0, 1.11022e-15, 1, 0, 0.0373372, 0)
+shape = SubResource("CylinderShape3D_rnmyl")
+
+[node name="sueloboton" type="MeshInstance3D" parent="cartel/NextLevelButton"]
+transform = Transform3D(0.843166, -8.15394e-16, 0.537653, 0, 1, 1.4803e-15, -0.537653, 1.23548e-15, 0.843166, 0.0041995, -0.0183799, -0.00366992)
+material_override = SubResource("StandardMaterial3D_qp1ml")
+mesh = SubResource("CylinderMesh_s1e52")
+skeleton = NodePath("../..")
+
+[node name="ButtonMesh" type="MeshInstance3D" parent="cartel/NextLevelButton"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.0339808, 0)
+mesh = SubResource("CylinderMesh_vwv3i")
 
 [node name="cartelinstrucciones" type="StaticBody3D" parent="."]
 
@@ -232,4 +268,5 @@ shape = SubResource("CylinderShape3D_v3qcq")
 [connection signal="picked_up" from="cajon/PickableCanica2" to="cartel/Cartel/Label3D" method="_on_pickable_canica_picked_up"]
 [connection signal="picked_up" from="cajon/PickableCanica3" to="cartel/Cartel/Label3D" method="_on_pickable_canica_picked_up"]
 [connection signal="button_released" from="cajon/BotonReinicio/InteractableAreaButton" to="cajon" method="_on_reset_button_released"]
+[connection signal="button_released" from="cartel/NextLevelButton/InteractableAreaButton" to="cartel/NextLevelButton" method="_on_interactable_area_button_button_released"]
 [connection signal="button_released" from="cartelcreditos/botonexit" to="cartelcreditos" method="_on_botonexit_button_released"]

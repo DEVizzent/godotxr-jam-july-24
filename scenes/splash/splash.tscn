@@ -33,4 +33,4 @@ environment = SubResource("Environment_323l3")
 stream = ExtResource("3_u3440")
 volume_db = 10.0
 autoplay = true
-bus = &"Music"
+bus = &"Effects"

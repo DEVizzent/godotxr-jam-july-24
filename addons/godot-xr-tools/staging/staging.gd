@@ -258,6 +258,7 @@ func load_scene(p_scene_path : String, user_data = null) -> void:
 
 	# Report new scene visible
 	current_scene.scene_visible(user_data)
+	prompt_for_continue = false
 	scene_visible.emit(current_scene, user_data)
 
 

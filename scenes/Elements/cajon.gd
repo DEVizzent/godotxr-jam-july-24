@@ -18,7 +18,3 @@ func _on_reset_button_released(button: Variant) -> void:
 	canica1.global_position = posicionOrigenCanica1
 	canica2.global_position = posicionOrigenCanica2
 	canica3.global_position = posicionOrigenCanica3
-
-
-func _on_reset_message_showed() -> void:
-	$BotonReinicio.visible = true
