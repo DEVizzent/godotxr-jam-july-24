@@ -69,7 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.24606)
 mesh = SubResource("BoxMesh_3xf8d")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Plataforma/camino" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.0034)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.24805)
 shape = SubResource("ConcavePolygonShape3D_mfwjx")
 
 [node name="tablero" type="StaticBody3D" parent="Plataforma" index="1"]
