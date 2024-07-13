@@ -1,21 +1,12 @@
-extends Label3D
-
-var ballCounter:int = 0
+extends MeshInstance3D
 
 signal reset_message_showed()
 
 func _ready():
-	cambioTexto("Take a ball! \n⬇",70)
-
-func cambioTexto(texto, tamano)->void:
-	text = str(texto)
-	font_size = tamano
-
-func _on_pickable_canica_picked_up(pickable: Variant) -> void:
-	ballCounter += 1
-	if(ballCounter == 1):
-		cambioTexto("Throw it making the colored\nones fall out of the platform\n⬅",40)
-	if (ballCounter == 3):
-		cambioTexto("Pulse red button '\nto get the balls back\n⬇",50)
-		reset_message_showed.emit()
-		
+	$Label3D.text = "Score: 0\nScore to nex level: 100"
+	
+func cambioTexto(puntuacion, getscore)->void:
+	$Label3D.text = "Score: " + str(puntuacion) + "\n SCore to next level: "+str(get_tree().root.SceneBase.puntuacion_minima_victoria)
+	if getscore == true:
+		$Label3D.text += "\n  [Press to go to next level]"
+		$areaBotonNext.show()

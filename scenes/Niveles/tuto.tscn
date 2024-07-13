@@ -71,8 +71,9 @@ shape = SubResource("CylinderShape3D_s5dt8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.17777)
 
 [node name="canica" parent="." index="5" instance=ExtResource("4_qw1ik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774856, -2.08083)
-puntuacion = 100
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00358, -2.08083)
+puntuacion = 50
 tamanoradio = 0.5
+color = Color(1, 0.361089, 0.253789, 1)
 
 [editable path="Plataforma/comienzo"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bwi8yaqbwifxn"]
+[gd_scene load_steps=27 format=3 uid="uid://bwi8yaqbwifxn"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_sf8p2"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_y7nxn"]
@@ -11,9 +11,16 @@
 [ext_resource type="AudioStream" uid="uid://bdnda0xrcybyg" path="res://scenes/Elements/Canicas/pick.ogg" id="9_8vpf0"]
 [ext_resource type="AudioStream" uid="uid://brpmhbvt8buvf" path="res://scenes/Elements/Canicas/hit1.ogg" id="10_gnvpk"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/audio/pickable_audio_type.gd" id="11_cc0kd"]
+[ext_resource type="AudioStream" uid="uid://brovyihxhwb3i" path="res://scenes/Elements/Canicas/contacto.wav" id="12_hpd2l"]
+[ext_resource type="AudioStream" uid="uid://cfak2a4rl5x3g" path="res://scenes/Elements/Canicas/rodar.mp3" id="13_jit74"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_die63"]
 radius = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2iam"]
+albedo_color = Color(0.421148, 0.409132, 0.704857, 1)
+metallic = 0.85
+roughness = 0.15
 
 [sub_resource type="SphereMesh" id="SphereMesh_xxjsd"]
 radius = 0.15
@@ -79,6 +86,7 @@ hit_sound = ExtResource("10_gnvpk")
 shape = SubResource("SphereShape3D_die63")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_t2iam")
 mesh = SubResource("SphereMesh_xxjsd")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." index="2"]
@@ -103,3 +111,10 @@ hand_pose = SubResource("Resource_pquuu")
 bus = &"Effects"
 script = ExtResource("7_f5qcm")
 pickable_audio_type = SubResource("Resource_vjdl8")
+
+[node name="contacto" type="AudioStreamPlayer3D" parent="." index="6"]
+stream = ExtResource("12_hpd2l")
+
+[node name="rodar" type="AudioStreamPlayer3D" parent="." index="7"]
+stream = ExtResource("13_jit74")
+volume_db = -30.0
