@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bmfs34hxnxftt"]
+[gd_scene load_steps=25 format=3 uid="uid://bmfs34hxnxftt"]
 
 [ext_resource type="Script" path="res://scenes/Elements/cajon.gd" id="1_bs6ed"]
 [ext_resource type="ArrayMesh" uid="uid://ilhkx26tygi8" path="res://modelos/cajon.obj" id="1_y1w71"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bwi8yaqbwifxn" path="res://scenes/Elements/Canicas/pickable_canica.tscn" id="4_bo3mm"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/interactables/interactable_area_button.gd" id="7_1fwct"]
 [ext_resource type="ArrayMesh" uid="uid://ww3brrileq67" path="res://modelos/cartelmadera.obj" id="7_8av1i"]
+[ext_resource type="Script" path="res://scenes/Elements/exit_game.gd" id="8_gmgeh"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ob8e7"]
 top_radius = 2.5
@@ -16,8 +17,9 @@ height = 1.0
 radial_segments = 15
 rings = 1
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b4dd3"]
-points = PackedVector3Array(0.898902, -0.438192, 2.49659, -0.629005, -0.5, -2.47379, -0.652896, -0.356043, -2.56943, -2.52153, -0.354632, 0.857695, 2.25442, 0.5, -0.331065, -2.10422, 0.5, 0.870066, 2.28187, -0.5, -1.13543, -0.650332, 0.458904, -2.39607, -0.0812441, 0.46005, 2.49072, -2.28137, -0.5, -1.13592, -1.10125, -0.5, 2.32607, 1.38185, 0.458787, -2.07035, 2.10653, 0.457089, 1.25888, 2.43912, -0.5, 0.830456, -2.19735, 0.459149, -1.1766, 1.06099, -0.437641, -2.40518, -1.86901, 0.458554, 1.66978, 2.53769, 0.21607, -0.283012, -1.54659, -0.273466, -2.15378, 0.976537, 0.5, 2.07308, -2.53766, 0.216109, -0.283074, 1.95023, -0.435561, 1.83199, -0.525465, 0.5, -2.21022, -1.888, -0.5, 1.77495, 0.57067, 0.215282, -2.48371, 1.21459, 0.457057, 2.15058, 2.19749, 0.459178, -1.17617, 2.11317, -0.435561, -1.58116, -0.898904, -0.438194, 2.49659, 2.6029, -0.354534, -0.443461, -2.63062, -0.440655, 0.126085, -2.35662, 0.377206, 0.856897)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nk4qh"]
+height = 1.0
+radius = 2.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qp1ml"]
 albedo_color = Color(0.980392, 0.443137, 0, 1)
@@ -27,15 +29,15 @@ data = PackedVector3Array(-2.4279, 1, -1, 2.4279, 1, -1, -2.4279, 1, -1, -2.4279
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_rnmyl"]
 height = 0.05
-radius = 0.1
+radius = 0.06
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f45xk"]
 albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_r381w"]
 material = SubResource("StandardMaterial3D_f45xk")
-top_radius = 0.08
-bottom_radius = 0.09
+top_radius = 0.05
+bottom_radius = 0.06
 height = 0.05
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_s1e52"]
@@ -44,8 +46,12 @@ bottom_radius = 0.2
 height = 0.06
 radial_segments = 5
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wlmva"]
-size = Vector3(2.84076, 0.462158, 0.684692)
+[sub_resource type="BoxShape3D" id="BoxShape3D_0kx0y"]
+size = Vector3(0.145874, 0.602997, 1.06952)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fiude"]
+height = 1.0
+radius = 0.04
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spw3b"]
 albedo_color = Color(0.717666, 0.44403, 0.364093, 1)
@@ -56,8 +62,14 @@ albedo_color = Color(0.817492, 0.96549, 1, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_eekei"]
 size = Vector2(2.835, 1.77)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_v06if"]
-size = Vector3(0.238135, 0.226233, 0.335425)
+[sub_resource type="BoxShape3D" id="BoxShape3D_2y4e8"]
+resource_local_to_scene = true
+size = Vector3(0.0720215, 0.865311, 1.46164)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_v3qcq"]
+resource_local_to_scene = true
+height = 1.0
+radius = 0.05
 
 [node name="comienzo" type="StaticBody3D"]
 
@@ -65,7 +77,7 @@ size = Vector3(0.238135, 0.226233, 0.335425)
 mesh = SubResource("CylinderMesh_ob8e7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_b4dd3")
+shape = SubResource("CylinderShape3D_nk4qh")
 
 [node name="cajon" type="StaticBody3D" parent="."]
 transform = Transform3D(0.330498, 0, -0.50077, 0, 0.6, 0, 0.50077, 0, 0.330498, -0.722004, 0.222996, 0.0289307)
@@ -91,7 +103,7 @@ transform = Transform3D(1.44053, 0, 0.838242, 0, 1.66667, 0, -0.838242, 0, 1.440
 transform = Transform3D(1.44053, 0, 0.838242, 0, 1.66667, 0, -0.838242, 0, 1.44053, 2.38315, 1.06254, -1.05093)
 
 [node name="BotonReinicio" type="Node3D" parent="cajon"]
-transform = Transform3D(1, 0, 4.17233e-07, 0, 1, 0, 0, 0, 1, 1.49064, 1.40927, -2.38678)
+transform = Transform3D(1, 0, 4.76837e-07, 0, 1, 0, -5.96046e-08, 0, 1, 2.85256, 1.40927, -0.982989)
 
 [node name="InteractableAreaButton" parent="cajon/BotonReinicio" instance=ExtResource("3_xjcek")]
 transform = Transform3D(1, -1.49012e-08, 5.96046e-08, 0, 1, 1.49012e-08, 0, 1.49012e-08, 1, 0, 0, 0)
@@ -106,7 +118,7 @@ transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.033
 mesh = SubResource("CylinderMesh_r381w")
 
 [node name="sueloboton" type="MeshInstance3D" parent="cajon"]
-transform = Transform3D(0.843166, 0, 0.537653, 0, 1, 0, -0.537653, 0, 0.843166, 1.49484, 1.39089, -2.39045)
+transform = Transform3D(0.843166, 0, 0.537653, 0, 1, 0, -0.537653, 0, 0.843166, 2.85676, 1.39089, -0.986658)
 material_override = SubResource("StandardMaterial3D_qp1ml")
 mesh = SubResource("CylinderMesh_s1e52")
 
@@ -127,14 +139,13 @@ Score to next level: 0
 [Next level]"
 font_size = 55
 
-[node name="areaBotonNext" type="Area3D" parent="cartel/Cartel"]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 2.49039, 0)
-visible = false
-script = ExtResource("7_1fwct")
+[node name="CollisionShapeCartel" type="CollisionShape3D" parent="cartel"]
+transform = Transform3D(0.796667, 0, 0.604418, 0, 1, 0, -0.604418, 0, 0.796667, 0.936501, 1.16472, -0.0638115)
+shape = SubResource("BoxShape3D_0kx0y")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cartel/Cartel/areaBotonNext"]
-transform = Transform3D(1, 0, 0, 0, 0.99998, 0, 0, 0, 1, -0.0145533, 0.175903, 0.292871)
-shape = SubResource("BoxShape3D_wlmva")
+[node name="CollisionShapePalo" type="CollisionShape3D" parent="cartel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.938621, 0.441857, -0.0523192)
+shape = SubResource("CylinderShape3D_fiude")
 
 [node name="cartelinstrucciones" type="StaticBody3D" parent="."]
 
@@ -160,8 +171,17 @@ you can go to the next level
 If you get out of balls press the red button"
 font_size = 27
 
+[node name="CollisionShapeCartel" type="CollisionShape3D" parent="cartelinstrucciones"]
+transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 1.40873, 1.52446, 0.0047705)
+shape = SubResource("BoxShape3D_2y4e8")
+
+[node name="CollisionShapePalo" type="CollisionShape3D" parent="cartelinstrucciones"]
+transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 1.40943, 0.647433, 0.00432353)
+shape = SubResource("CylinderShape3D_v3qcq")
+
 [node name="cartelcreditos" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.190021, 0, -0.98178, 0, 1, 0, 0.98178, 0, -0.190021, 0.0581901, 0, 1.11826)
+script = ExtResource("8_gmgeh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="cartelcreditos"]
 transform = Transform3D(0.5, 0, 1.86265e-08, 0, 0.5, 0, -1.86265e-08, 0, 0.5, 0.437423, 0.191326, 0.660534)
@@ -186,14 +206,30 @@ JustABard: music
 font_size = 27
 
 [node name="botonexit" type="Area3D" parent="cartelcreditos"]
-transform = Transform3D(0.999993, 0.00359817, -3.34829e-05, -0.00359817, 0.999821, -0.0185906, -3.34233e-05, 0.0185907, 0.999828, 0.350882, 1.15765, 1.14133)
+transform = Transform3D(0.999994, 0.00359817, -3.34382e-05, -0.00359817, 0.999821, -0.0185907, -3.3468e-05, 0.0185907, 0.999827, 0.381058, 1.13237, 1.29724)
+monitorable = false
 script = ExtResource("7_1fwct")
+button = NodePath("ButtonMesh")
+displacement = Vector3(0, 0, -0.02)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cartelcreditos/botonexit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0373155, 0.0159119, 0.0163127)
-shape = SubResource("BoxShape3D_v06if")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="cartelcreditos/botonexit"]
+transform = Transform3D(-0.00235845, -0.999966, 0.00785331, 0.985047, -0.00367599, -0.172241, 0.172264, 0.00732943, 0.985023, 0.000607252, 0.0349656, 0.00313818)
+shape = SubResource("CylinderShape3D_rnmyl")
+
+[node name="ButtonMesh" type="MeshInstance3D" parent="cartelcreditos/botonexit"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.0339808, 0)
+mesh = SubResource("CylinderMesh_r381w")
+
+[node name="CollisionShapeCartel" type="CollisionShape3D" parent="cartelcreditos"]
+transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0.432346, 1.53008, 0.66806)
+shape = SubResource("BoxShape3D_2y4e8")
+
+[node name="CollisionShapePalo" type="CollisionShape3D" parent="cartelcreditos"]
+transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0.434386, 0.561184, 0.666499)
+shape = SubResource("CylinderShape3D_v3qcq")
 
 [connection signal="picked_up" from="cajon/PickableCanica" to="cartel/Cartel/Label3D" method="_on_pickable_canica_picked_up"]
 [connection signal="picked_up" from="cajon/PickableCanica2" to="cartel/Cartel/Label3D" method="_on_pickable_canica_picked_up"]
 [connection signal="picked_up" from="cajon/PickableCanica3" to="cartel/Cartel/Label3D" method="_on_pickable_canica_picked_up"]
 [connection signal="button_released" from="cajon/BotonReinicio/InteractableAreaButton" to="cajon" method="_on_reset_button_released"]
+[connection signal="button_released" from="cartelcreditos/botonexit" to="cartelcreditos" method="_on_botonexit_button_released"]

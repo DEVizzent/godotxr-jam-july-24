@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://do2t8wbyaa1un"]
+[gd_scene load_steps=15 format=3 uid="uid://do2t8wbyaa1un"]
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_fiipc"]
 [ext_resource type="PackedScene" uid="uid://dca7kpaknod76" path="res://scenes/nenufar.tscn" id="2_2vtdm"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_2j7sg"]
 [ext_resource type="PackedScene" uid="uid://bdwmserhqai5h" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_physics_hand_low.tscn" id="3_nqrgb"]
 [ext_resource type="PackedScene" uid="uid://btf05hjpw6k05" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_physics_hand_low.tscn" id="5_14yp2"]
-[ext_resource type="PackedScene" uid="uid://73cvs0vmshrg" path="res://scenes/Elements/puntuacion.tscn" id="10_svgqe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ei12e"]
 
@@ -40,7 +39,7 @@ ambient_light_source = 2
 ambient_light_color = Color(0.857756, 0.670907, 0.503778, 1)
 tonemap_mode = 2
 
-[node name="SceneBase" instance=ExtResource("1_fiipc")]
+[node name="SceneBase" groups=["nivel"] instance=ExtResource("1_fiipc")]
 script = ExtResource("2_u1d0l")
 puntuacion_minima_victoria = 50
 nextLevel = "res://scenes/Niveles/tuto.tscn"
@@ -95,14 +94,10 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -4.8729, -0.347337, 4.1
 [node name="nenufar3" parent="fondo/Nenufares" index="2" instance=ExtResource("2_2vtdm")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6.32559, -0.30385, -8.16385)
 
-[node name="Puntuacion" parent="." index="2" instance=ExtResource("10_svgqe")]
-transform = Transform3D(0.492044, 0, 0.87057, 0, 1, 0, -0.87057, 0, 0.492044, -2.14598, 2, 1.69186)
-enabled = false
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="3"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
 environment = SubResource("Environment_bx5qi")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="4"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="3"]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 light_color = Color(1, 0.917647, 0.839216, 1)
 light_energy = 2.0
