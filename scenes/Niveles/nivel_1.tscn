@@ -102,18 +102,22 @@ shape = SubResource("CylinderShape3D_0r4i4")
 [node name="canica3" parent="." index="5" instance=ExtResource("2_1vijs")]
 transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, -1.33119, 0.781817, -5.77602)
 puntuacion = 50
+color = Color(1, 0.716335, 0.137373, 1)
 
-[node name="canica" parent="." index="6" instance=ExtResource("2_1vijs")]
+[node name="canica1" parent="." index="6" instance=ExtResource("2_1vijs")]
 transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, -0.150386, 0.948152, -3.83282)
 tamanoradio = 0.4
+color = Color(0, 0.732179, 0.747578, 1)
 
 [node name="canica2" parent="." index="7" instance=ExtResource("2_1vijs")]
 transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, 1.55593, 0.691072, -4.47297)
 puntuacion = 70
 tamanoradio = 0.1
+color = Color(0.80335, 0, 0.17433, 1)
 
 [node name="canica4" parent="." index="8" instance=ExtResource("2_1vijs")]
 transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, 0.909849, 0.781817, -5.84747)
 puntuacion = 50
+color = Color(1, 0.716335, 0.137373, 1)
 
 [editable path="Plataforma/comienzo"]

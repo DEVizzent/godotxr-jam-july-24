@@ -100,7 +100,7 @@ environment = SubResource("Environment_bx5qi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="3"]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-light_color = Color(1, 0.917647, 0.839216, 1)
+light_color = Color(0.292996, 0.526082, 0.645375, 1)
 light_energy = 2.0
 shadow_enabled = true
 

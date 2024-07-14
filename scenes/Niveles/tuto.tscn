@@ -76,7 +76,7 @@ shape = SubResource("CylinderShape3D_s5dt8")
 [node name="comienzo" parent="Plataforma" index="2" instance=ExtResource("3_h0ltl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.17777)
 
-[node name="BotonReinicio" parent="Plataforma/comienzo/cajon" index="5"]
+[node name="BotonReinicio" parent="Plataforma/comienzo/cajon" index="2"]
 transform = Transform3D(1, 0, 5.96047e-08, 0, 1, 0, -5.96047e-08, 0, 1, 2.85256, 1.40927, -0.982989)
 
 [node name="CollisionShapeCartel" parent="Plataforma/comienzo/cartelinstrucciones" index="1"]

@@ -52,6 +52,7 @@ height = 1.0
 radius = 0.05
 
 [node name="SceneBase" instance=ExtResource("1_ngqb1")]
+puntuacion_minima_victoria = 90
 nextLevel = "res://scenes/Niveles/nivel_4.tscn"
 
 [node name="XROrigin3D" parent="." index="0"]
@@ -131,25 +132,29 @@ shape = SubResource("CylinderShape3D_5pxjb")
 [node name="canica3" parent="." index="5" instance=ExtResource("5_l2qci")]
 transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, 0.999359, 0.710223, -4.45234)
 puntuacion = 25
+color = Color(0.829204, 0.54948, 0.176239, 1)
 
 [node name="canica" parent="." index="6" instance=ExtResource("5_l2qci")]
 transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, -4.46072, 0.815334, 0.650657)
 puntuacion = 50
-tamanoradio = 0.3
+color = Color(0.936011, 0.311679, 0, 1)
 
 [node name="canica2" parent="." index="7" instance=ExtResource("5_l2qci")]
 transform = Transform3D(0.99895, 0.0457989, 0, -0.0457989, 0.99895, 0, 0, 0, 1, -1.46632, 0.604475, -3.87533)
-puntuacion = 40
+puntuacion = 45
 tamanoradio = 0.1
+color = Color(0.727445, 0.179308, 0.420211, 1)
 
 [node name="canica4" parent="." index="8" instance=ExtResource("5_l2qci")]
 transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, -0.842209, 0.815334, -6.46471)
 puntuacion = 15
 tamanoradio = 0.3
+color = Color(0, 0.501139, 0.420065, 1)
 
 [node name="canica5" parent="." index="9" instance=ExtResource("5_l2qci")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.616034, 0.65, -5.80558)
-puntuacion = 30
+puntuacion = 35
 tamanoradio = 0.15
+color = Color(1.92523e-06, 0.453719, 0.693296, 1)
 
 [editable path="Plataforma/comienzo"]
