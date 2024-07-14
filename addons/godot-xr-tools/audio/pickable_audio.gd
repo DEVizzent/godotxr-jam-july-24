@@ -53,9 +53,11 @@ func _on_picked_up(_pickable) -> void:
 
 # Called when this object is dropped
 func _on_dropped(_pickable) -> void:
-	for body in _pickable.get_colliding_bodies():
-		if playing:
-			stop()
+	volume_db = 0
+	if playing:
+		stop()
+	stream = pickable_audio_type.drop_sound
+	play()
 
 
 func _on_body_entered(_body):

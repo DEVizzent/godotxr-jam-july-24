@@ -16,7 +16,7 @@ func comprobarVictioria(puntuacion:int) -> void:
 
 func abrirflores():
 	for flor in get_tree().get_nodes_in_group("nenufar"):
-		await get_tree().create_timer(randf_range(0,1)).timeout
+		await get_tree().create_timer(randf_range(0,1.5)).timeout
 		flor.abrirFlor()
 
 func goNextLevel()->void:
