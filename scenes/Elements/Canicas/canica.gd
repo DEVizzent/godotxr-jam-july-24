@@ -10,6 +10,8 @@ func getPuntuacion()->int:
 	return puntuacion;
 
 func _ready():
+	var materialClone = $MeshInstance3D.get_surface_override_material(0).duplicate()
+	$MeshInstance3D.set_surface_override_material(0, materialClone)
 	_resize()
 
 func _process(_delta: float) -> void:

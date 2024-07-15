@@ -30,7 +30,7 @@ resource_local_to_scene = true
 height = 1.0
 radius = 0.05
 
-[node name="SceneBase" instance=ExtResource("1_5o4tl")]
+[node name="SceneBase2" instance=ExtResource("1_5o4tl")]
 puntuacion_minima_victoria = 100
 
 [node name="XROrigin3D" parent="." index="0"]
@@ -124,29 +124,29 @@ shape = SubResource("BoxShape3D_icpdw")
 shape = SubResource("CylinderShape3D_l7n3j")
 
 [node name="canica3" parent="." index="5" instance=ExtResource("5_u7r8h")]
-transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, 1.52326, 0.781817, -8.52703)
+transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, 1.09858, 0.476637, -8.52703)
 puntuacion = 30
 tamanoradio = 0.25
 color = Color(1, 0.539935, 0.315659, 1)
 
 [node name="canica" parent="." index="6" instance=ExtResource("5_u7r8h")]
-transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, 0.598423, 0.920446, -6.81496)
+transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, 0.598423, 0.634304, -6.81496)
 puntuacion = 10
 tamanoradio = 0.4
 color = Color(1.92523e-06, 0.460543, 0.664366, 1)
 
 [node name="canica2" parent="." index="7" instance=ExtResource("5_u7r8h")]
-transform = Transform3D(0.99895, 0.0457989, 0, -0.0457989, 0.99895, 0, 0, 0, 1, -1.11776, 0.604475, -7.34622)
+transform = Transform3D(0.99895, 0.0457989, 0, -0.0457989, 0.99895, 0, 0, 0, 1, -1.00448, 0.318334, -7.34622)
 puntuacion = 55
 tamanoradio = 0.1
 color = Color(0.926419, 0, 0.300578, 1)
 
 [node name="canica4" parent="." index="8" instance=ExtResource("5_u7r8h")]
-transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, -0.842209, 0.762778, -9.53628)
+transform = Transform3D(0.998621, 0.0524928, 0, -0.0524928, 0.998621, 0, 0, 0, 1, -0.842209, 0.529193, -9.53628)
 tamanoradio = 0.3
 
 [node name="canica5" parent="." index="9" instance=ExtResource("5_u7r8h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.365317, 0.65, -9.27647)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.365317, 0.363859, -9.27647)
 puntuacion = 45
 tamanoradio = 0.15
 color = Color(0.489448, 0.43854, 0.853122, 1)

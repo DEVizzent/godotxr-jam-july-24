@@ -48,9 +48,6 @@ nextLevel = "res://scenes/Niveles/tuto.tscn"
 [node name="XROrigin3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 3)
 
-[node name="XRCamera3D" parent="XROrigin3D" index="0"]
-current = true
-
 [node name="LeftPhysicsHand" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("3_nqrgb")]
 
 [node name="FunctionPickup" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("3_2j7sg")]
