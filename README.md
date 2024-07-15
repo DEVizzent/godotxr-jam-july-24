@@ -1,4 +1,4 @@
-# mermelada-jam-2023
+# GodotXR Game Jam July 2024
 Repositorio para desarrollar un juego en la GodotXRJam
 [https://itch.io/jam/godot-xr-game-jam-july-2024](https://itch.io/jam/godot-xr-game-jam-july-2024)
 ## Requisitos:
